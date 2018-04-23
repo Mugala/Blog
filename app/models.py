@@ -97,6 +97,7 @@ class Subscription(db.Model):
 
 
 
+
 admin.add_view(ModelView(User, db.session))
 admin.add_view(ModelView(Posts, db.session))
 admin.add_view(ModelView(Comments, db.session))
