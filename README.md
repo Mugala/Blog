@@ -34,4 +34,4 @@ a database was also implimented... It uses SQLAlchemy an open source SQL toolkit
 In the event that you run into an issue that you need sorted or clarified, feel free to reach out to me *mugalalevi21@gmail.com* and I should be able to reply within two working days. Also feel free to make contribtion to the code and to improve the application.
 
 License
-*MIT* Copyright (c) 2018 `Levi Mugala and Moringa School`
+*MIT* Copyright (c) 2018 `Levi Mugala and Moringa School`.
