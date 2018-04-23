@@ -6,7 +6,7 @@ from app.models import User,Role,Posts,Comments,Subscription
 from flask_admin.contrib.sqla import ModelView
 from flask_admin import Admin
 
-app = create_app('produc')
+app = create_app('default')
 
 manager = Manager(app)
 
