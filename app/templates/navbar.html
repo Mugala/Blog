@@ -1,0 +1,44 @@
+
+
+<!DOCTYPE html>
+<html style="background-position: center; background-size: cover; background-repeat: no-repeat; background-image:url({{url_for('static',filename='home-img.jpeg') }})">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body style="background-height:100vh;background-image:url({{url_for('static',filename='img/blog-background.jpg') }})">
+    <nav class="navbar navbar-default navbar-transparent navbar-fixed-top" color-on-scroll="200">
+        <!-- if you want to keep the navbar hidden you can add this class to the navbar "navbar-burger"-->
+        <div class="container">
+            <div class="navbar-header">
+                <button id="menu-toggle" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar bar1"></span>
+                    <span class="icon-bar bar2"></span>
+                    <span class="icon-bar bar3"></span>
+                </button>
+
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right navbar-uppercase">
+                  {% if current_user.is_authenticated %}
+                  <li><a href="{{url_for('admin.index')}}">{{current_user.username}}</a></li>
+                  <li><a href="{{url_for('auth.logout')}}">Sign out</a></li>
+                  {% else %}
+                    <li>
+                        <a href="{{url_for('auth.login')}}">Sign in</a>
+                  </li>
+
+                  {%endif%}
+                  <li>
+                      <a href="{{url_for('main.index')}}">Home</a>
+                </li>
+
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+    </nav>
+  </body>
+</html>

@@ -17,9 +17,9 @@ class User(UserMixin,db.Model):
     __tablename__ = 'users'
 
     id = db.Column(db.Integer, primary_key = True)
-    email = db.Column(db.String(200),unique=True)
-    username=db.Column(db.String(200),unique=True)
-    password_hash = db.Column(db.String(200))
+    email = db.Column(db.String(100),unique=True)
+    username=db.Column(db.String(60),unique=True)
+    password_hash = db.Column(db.String(60))
     role_id = db.Column(db.Integer,db.ForeignKey('roles.id'))
 
 
@@ -60,7 +60,7 @@ class Posts(db.Model):
     __tablename__='posts'
 
     id = db.Column(db.Integer, primary_key =True)
-    title = db.Column(db.String(200))
+    title = db.Column(db.String(250))
     content = db.Column(db.String)
     posted = db.Column(db.DateTime,default=datetime.utcnow)
     user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
@@ -77,7 +77,7 @@ class Comments(db.Model):
     __tablename__='comments'
 
     id=db.Column(db.Integer, primary_key=True)
-    comment= db.Column(db.String(200))
+    comment= db.Column(db.String(250))
     posted = db.Column(db.DateTime,default=datetime.utcnow)
     posts_id = db.Column(db.Integer,db.ForeignKey("posts.id"))
 
@@ -92,7 +92,7 @@ class Subscription(db.Model):
     __tablename__='subscription'
 
     id=db.Column(db.Integer,primary_key=True)
-    email=db.Column(db.String(200))
+    email=db.Column(db.String(250))
     posted = db.Column(db.DateTime,default=datetime.utcnow)
 
 
