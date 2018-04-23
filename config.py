@@ -2,7 +2,7 @@
 import os
 
 class Config:
-    pass
+
     SECRET_KEY = os.environ.get('SECRET_KEY')
     # simple mde  configurations
     SIMPLEMDE_JS_IIFE = True
@@ -19,6 +19,9 @@ class ProdConfig(Config):
 
 class DevConfig(Config):
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://levi:eyeshadow@localhost/Personal_Blog'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://levi:eyeshadow@localhost/personal_blog'
 
-config_options ={"production":ProdConfig,"default":DevConfig}   
+config_options = {
+"production":ProdConfig,
+"default":DevConfig
+}   
